@@ -1,0 +1,9 @@
+initializeSpring:
+    [x] Spring Initializr実行する
+    [x] Dockerfile, docker-compose作る
+    [x] application.yml書く
+    [x] Flyway用のV1.0_createtable.sql仮置きする
+    [ ] git init
+
+later:
+    [ ] DDL書く
