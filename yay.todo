@@ -5,6 +5,7 @@ initializeSpring:
     [x] Flyway用のV1.0_createtable.sql仮置きする
     [x] git init
     [x] GitHubにpushする
+    [x] build.gradleにdocker用のtask書く
 
 later:
     [ ] DDL書く
