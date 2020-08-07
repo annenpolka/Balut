@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "element-ui": "^2.13.2",
+    "eslint": "^7.6.0"
+  }
+}

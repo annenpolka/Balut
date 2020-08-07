@@ -11,6 +11,7 @@ initializeVue:
     [x] vue createする
     [ ] axios入れる
     [ ] ElementUI入れる
+    [x] フォーマッタ設定する
 
 later:
     [ ] DDL書く
