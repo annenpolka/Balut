@@ -34,3 +34,19 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+// bootRun, test時にPostgresのコンテナを立てる
+task startDB(type: Exec) {
+    commandLine 'docker-compose', 'up', '-d'
+
+    doLast {
+        sleep 5000L
+    }
+}
+
+task stopDB(type: Exec) {
+    commandLine 'docker-compose', 'down'
+}
+
+[test, bootRun]*.dependsOn startDB
+[test, bootRun]*.finalizedBy stopDB
