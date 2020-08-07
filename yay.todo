@@ -4,6 +4,7 @@ initializeSpring:
     [x] application.yml書く
     [x] Flyway用のV1.0_createtable.sql仮置きする
     [x] git init
+    [ ] GitHubにpushする
 
 later:
     [ ] DDL書く
