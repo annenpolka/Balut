@@ -7,5 +7,10 @@ initializeSpring:
     [x] GitHubにpushする
     [x] build.gradleにdocker用のtask書く
 
+initializeVue:
+    [x] vue createする
+    [ ] axios入れる
+    [ ] ElementUI入れる
+
 later:
     [ ] DDL書く
