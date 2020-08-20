@@ -1,17 +1,42 @@
-initializeSpring:
-    [x] Spring Initializr実行する
-    [x] Dockerfile, docker-compose作る
-    [x] application.yml書く
-    [x] Flyway用のV1.0_createtable.sql仮置きする
-    [x] git init
-    [x] GitHubにpushする
-    [x] build.gradleにdocker用のtask書く
-
 initializeVue:
     [x] vue createする
     [ ] axios入れる
-    [ ] ElementUI入れる
+    [ ] UIフレームワーク入れる
     [x] フォーマッタ設定する
 
-later:
+Vue:
+    BookComponent:
+        BookList:
+            [ ] BookList.vue作る
+            [ ] Book一覧表示データバインド
+            [ ] Book新規作成機能
+        Book:
+            [ ] Book.vue作る
+            [ ] BookSection一覧表示データバインド
+            [ ] BookSection一覧表示UI
+            [ ] BookSection新規作成機能
+        BookSection:
+            [ ] BookSection.vue作る
+            [ ] BookCard一覧表示データバインド
+            [ ] BookCard一覧表示UI
+            [ ] BookCard新規作成機能
+        BookCard:
+            [ ] BookCard.vue作る
+            [ ] 入力フォームデータバインド
+            [ ] 入力フォームUI
+
+Spring:
+
+other:
     [ ] DDL書く
+
+closed:
+    initializeSpring:
+        [x] Spring Initializr実行する
+        [x] Dockerfile, docker-compose作る
+        [x] application.yml書く
+        [x] Flyway用のV1.0_createtable.sql仮置きする
+        [x] git init
+        [x] GitHubにpushする
+        [x] build.gradleにdocker用のtask書く
+
