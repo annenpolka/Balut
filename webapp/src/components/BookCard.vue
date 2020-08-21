@@ -1,5 +1,5 @@
 <template>
-  <div @click="startEditing">
+  <div @click="startEditingCard">
     <component
       class="book-card"
       :is="cardStatus"
@@ -29,7 +29,7 @@ export default {
     },
   },
   methods: {
-    startEditing() {
+    startEditingCard() {
       this.isBeingEdited = true;
     },
     updateCard(event) {
