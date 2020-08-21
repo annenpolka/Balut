@@ -20,21 +20,21 @@ export default {
   data() {
     return {
       cardText: 'default',
-      isEdit: false,
+      isBeingEdited: false,
     };
   },
   computed: {
     cardStatus() {
-      return this.isEdit ? BookCardTextarea : BookCardContent;
+      return this.isBeingEdited ? BookCardTextarea : BookCardContent;
     },
   },
   methods: {
     edit() {
-      this.isEdit = true;
+      this.isBeingEdited = true;
     },
     updateCard(event) {
       this.cardText = event;
-      this.isEdit = false;
+      this.isBeingEdited = false;
     },
   },
 };
