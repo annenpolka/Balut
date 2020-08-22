@@ -1,16 +1,14 @@
 <template>
-  <div class="container mx-auto bg-gray-200">
+  <div class="mx-auto bg-gray-200">
     <p class="hello">Hello TailWind</p>
-    <BookCard></BookCard>
+    <BookSection></BookSection>
   </div>
 </template>
 
 <script>
-import BookCard from '@/components/BookCard.vue';
+import BookSection from '@/components/BookSection.vue';
 export default {
-  components: {
-    BookCard,
-  },
+  components: { BookSection },
 };
 </script>
 
