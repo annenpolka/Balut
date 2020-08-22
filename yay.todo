@@ -1,7 +1,7 @@
 initializeVue:
     [x] vue createする
     [ ] axios入れる
-    [ ] UIフレームワーク入れる
+    [-] UIフレームワークVuetify入れる
     [x] フォーマッタ設定する
 
 Vue:
