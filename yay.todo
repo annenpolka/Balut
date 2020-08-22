@@ -1,10 +1,10 @@
-initializeVue:
-    [x] vue createする
-    [ ] axios入れる
-    [-] UIフレームワークVuetify入れる
-    [x] フォーマッタ設定する
-
 Vue:
+    initialize:
+        [x] vue createする
+        [ ] axios入れる
+        [-] UIフレームワークVuetify入れる
+        [x] TailWindCSS入れる
+        [x] フォーマッタ設定する
     BookComponent:
         BookList:
             [ ] BookList.vue作る
@@ -26,11 +26,6 @@ Vue:
             [ ] 入力フォームUI
 
 Spring:
-
-other:
-    [ ] DDL書く
-
-closed:
     initializeSpring:
         [x] Spring Initializr実行する
         [x] Dockerfile, docker-compose作る
@@ -39,4 +34,8 @@ closed:
         [x] git init
         [x] GitHubにpushする
         [x] build.gradleにdocker用のtask書く
+
+
+other:
+    [ ] DDL書く
 
