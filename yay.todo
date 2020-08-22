@@ -13,6 +13,7 @@ Vue:
         Book:
             [ ] Book.vue作る
             [ ] BookSection一覧表示データバインド
+            
             [ ] BookSection一覧表示UI
             [ ] BookSection新規作成機能
         BookSection:
