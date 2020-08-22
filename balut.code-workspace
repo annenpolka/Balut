@@ -6,6 +6,12 @@
   ],
   "settings": {
     "java.configuration.updateBuildConfiguration": "automatic",
-    "eslint.workingDirectories": ["./webapp/"]
+    "eslint.workingDirectories": [
+      "./webapp/"
+    ],
+    "cSpell.words": [
+      "bookcard",
+      "cardtext"
+    ]
   }
 }

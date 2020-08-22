@@ -21,7 +21,7 @@ Vue:
             [ ] BookCard一覧表示UI
             [ ] BookCard新規作成機能
         BookCard:
-            [ ] BookCard.vue作る
+            [x] BookCard.vue作る
             [ ] 入力フォームデータバインド
             [ ] 入力フォームUI
 
