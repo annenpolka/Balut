@@ -1,7 +1,7 @@
 <template>
   <div class="book-section">
     <ul>
-      <li>BookTitle</li>
+      <li>BookSectionTitle</li>
     </ul>
     <BookCard></BookCard>
     <BookCard></BookCard>

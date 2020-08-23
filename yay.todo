@@ -25,6 +25,7 @@ Vue:
             [ ] 入力フォームデータバインド
             [ ] 入力フォームUI
                 [ ] 伸縮機能
+                [x] 動的コンポーネント
 
 Spring:
     initializeSpring:

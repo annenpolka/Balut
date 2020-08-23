@@ -1,39 +1,55 @@
 <template>
-  <div class="book-card">
-    <textarea
-      class="card-input"
-      type="text"
-      :placeholder="placeholder"
-      v-model="cardText"
-    />
+  <div @click="edit">
+    <component
+      class="book-card"
+      :is="cardStatus"
+      :cardText="cardText"
+      @card-submit="updateCard"
+    ></component>
   </div>
 </template>
 
 <script>
+import BookCardTextarea from './BookCardTextarea';
+import BookCardContent from './BookCardContent';
 export default {
+  components: {
+    BookCardTextarea,
+    BookCardContent,
+  },
   data() {
     return {
-      cardText: '',
-      placeholder: '文字を入力',
+      cardText: 'default',
+      isEdit: false,
     };
+  },
+  computed: {
+    cardStatus() {
+      return this.isEdit ? BookCardTextarea : BookCardContent;
+    },
+  },
+  methods: {
+    edit() {
+      this.isEdit = true;
+    },
+    updateCard(event) {
+      this.cardText = event;
+      this.isEdit = false;
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+* {
+  @apply transition-all duration-100;
+}
+
 .book-card {
-  @apply transition-all duration-100 max-w-sm overflow-hidden rounded shadow-lg p-3 my-3 bg-gray-100;
+  @apply max-w-sm overflow-hidden rounded shadow-lg p-3 my-3 bg-gray-100 whitespace-pre-wrap;
 
   &:hover {
     @apply bg-white;
-  }
-}
-
-.card-input {
-  @apply resize-none transition-all duration-100 w-full bg-transparent border-transparent;
-
-  &:focus {
-    @apply outline-none;
   }
 }
 </style>
