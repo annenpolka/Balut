@@ -3,7 +3,7 @@
     <BookSection
       v-for="bookSection in bookSections"
       :bookCards="bookSection.bookCards"
-      :title="bookSection.sectionTitle"
+      :title="bookSection.title"
       :key="bookSection.id"
     ></BookSection>
   </div>
@@ -20,7 +20,7 @@ export default {
       bookSections: [
         {
           id: 1,
-          sectionTitle: 'SectionTitle',
+          title: 'SectionTitle',
           bookCards: [
             { id: 1, text: 'hoge' },
             { id: 2, text: 'foo' },
@@ -29,7 +29,7 @@ export default {
         },
         {
           id: 2,
-          sectionTitle: 'SectionTitle2',
+          title: 'SectionTitle2',
           bookCards: [
             { id: 1, text: 'hoge' },
             { id: 2, text: 'foo' },
@@ -38,7 +38,7 @@ export default {
         },
         {
           id: 3,
-          sectionTitle: 'SectionTitle3',
+          title: 'SectionTitle3',
           bookCards: [
             { id: 1, text: 'hoge' },
             { id: 2, text: 'foo' },
