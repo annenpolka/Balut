@@ -11,8 +11,8 @@ Vue:
             [ ] Book一覧表示データバインド
             [ ] Book新規作成機能
         Book:
-            [ ] Book.vue作る
-            [ ] BookSection一覧表示データバインド
+            [x] Book.vue作る
+            [x] BookSection一覧表示データバインド
             [ ] BookSection一覧表示UI
                 [ ] セクション選択・開閉
             [ ] BookSection新規作成機能
