@@ -16,8 +16,8 @@ export default {
     };
   },
   methods: {
-    submit() {
-      this.$emit('card-submit', this.text);
+    submit($event) {
+      this.$emit('card-submit', $event.target.value);
     },
   },
 };
@@ -29,7 +29,7 @@ export default {
 }
 
 .card-input {
-  @apply resize-none w-full bg-transparent border-transparent;
+  @apply resize-none w-full border-transparent;
 
   &:focus {
     @apply outline-none;

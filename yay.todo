@@ -17,12 +17,12 @@ Vue:
             [ ] BookSection新規作成機能
         BookSection:
             [x] BookSection.vue作る
-            [ ] BookCard一覧表示データバインド
+            [x] BookCard一覧表示データバインド
             [ ] BookCard一覧表示UI
             [ ] BookCard新規作成機能
         BookCard:
             [x] BookCard.vue作る
-            [ ] 入力フォームデータバインド
+            [x] 入力フォームデータバインド
             [ ] 入力フォームUI
                 [ ] 伸縮機能
                 [x] 動的コンポーネント
