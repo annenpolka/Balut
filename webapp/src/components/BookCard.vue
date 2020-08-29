@@ -17,9 +17,11 @@ export default {
     BookCardTextarea,
     BookCardContent,
   },
+  props: {
+    cardText: String,
+  },
   data() {
     return {
-      cardText: 'default',
       isBeingEdited: false,
     };
   },
@@ -32,8 +34,8 @@ export default {
     startEditingCard() {
       this.isBeingEdited = true;
     },
-    updateCard(event) {
-      this.cardText = event;
+    updateCard($event) {
+      this.$emit('card-submit', $event);
       this.isBeingEdited = false;
     },
   },

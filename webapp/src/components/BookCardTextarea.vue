@@ -9,7 +9,9 @@
 
 <script>
 export default {
-  props: ['cardText'],
+  props: {
+    cardText: String,
+  },
   data() {
     return {
       text: this.cardText,

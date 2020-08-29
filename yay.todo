@@ -14,11 +14,12 @@ Vue:
             [ ] Book.vue作る
             [ ] BookSection一覧表示データバインド
             [ ] BookSection一覧表示UI
+                [ ] セクション選択・開閉
             [ ] BookSection新規作成機能
         BookSection:
             [x] BookSection.vue作る
             [x] BookCard一覧表示データバインド
-            [ ] BookCard一覧表示UI
+            [x] BookCard一覧表示UI
             [ ] BookCard新規作成機能
         BookCard:
             [x] BookCard.vue作る
@@ -26,6 +27,7 @@ Vue:
             [ ] 入力フォームUI
                 [ ] 伸縮機能
                 [x] 動的コンポーネント
+                [ ] 編集破棄操作
 
 Spring:
     initializeSpring:

@@ -1,13 +1,11 @@
 <template>
   <div class="book-section">
-    <ul>
-      <li>BookSectionTitle</li>
-    </ul>
+    <p>{{ title }}</p>
     <BookCard
       v-for="bookCard in bookCards"
-      :text="bookCard.text"
-      :key="bookCard.text"
-      @card-submit="updateSection($event, bookCard)"
+      :cardText="bookCard.text"
+      :key="bookCard.id"
+      @card-submit="cardSubmit($event, bookCard)"
     ></BookCard>
   </div>
 </template>
@@ -18,13 +16,9 @@ export default {
   components: {
     BookCard,
   },
-  data() {
-    return {
-      bookCards: [{ text: 'hoge' }, { text: 'foo' }, { text: 'bar' }],
-    };
-  },
+  props: ['bookCards', 'title'],
   methods: {
-    updateSection($event, bookCard) {
+    updateCard($event, bookCard) {
       console.log($event);
       bookCard.text = $event;
     },
