@@ -16,11 +16,13 @@ Vue:
             [ ] BookSection一覧表示UI
                 [ ] セクション選択・開閉
             [ ] BookSection新規作成機能
+            [ ] BookTitle.vue作る
         BookSection:
             [x] BookSection.vue作る
             [x] BookCard一覧表示データバインド
             [x] BookCard一覧表示UI
             [ ] BookCard新規作成機能
+            [ ] BookSectionTitle.vue作る
         BookCard:
             [x] BookCard.vue作る
             [x] 入力フォームデータバインド
