@@ -31,7 +31,7 @@ Vue:
                 [ ] 伸縮機能
                 [x] 動的コンポーネント
                 [ ] 編集破棄操作
-
+            [ ] BookCardLabel.vue作る
 Spring:
     initializeSpring:
         [x] Spring Initializr実行する
