@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full">
+  <div class="flex">
     <book
       v-for="book in books"
       :bookSections="book.bookSections"

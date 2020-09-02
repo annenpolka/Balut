@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex-shrink-0 w-3/12 p-2 overflow-y-scroll bg-gray-300 rounded shadow-xs"
+    class="flex-shrink-0 w-3/12 h-screen p-2 overflow-y-scroll bg-gray-300 rounded shadow-xs"
   >
     <BookSection
       v-for="bookSection in bookSections"
