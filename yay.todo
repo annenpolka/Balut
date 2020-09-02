@@ -22,8 +22,12 @@ Vue:
             [x] BookCard一覧表示データバインド
             [x] BookCard一覧表示UI
             [ ] BookCard新規作成機能
-            [ ] BookSectionHeader.vue作る
+                [ ] BookSectionInput.vue作る
+                [ ] submitNewCard()作る
+                [ ] createNewCard()作る
+                [ ] イベント名見直す
             [ ] カスタムスクロールバー実装する
+            [ ] BookSectionHeader.vue作る
         BookCard:
             [x] BookCard.vue作る
             [x] 入力フォームデータバインド
