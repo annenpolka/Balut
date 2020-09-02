@@ -1,6 +1,5 @@
 <template>
-  <div class="mx-auto bg-gray-100">
-    <p class="hello">Hello TailWind</p>
+  <div class="bg-gray-100">
     <book-list></book-list>
   </div>
 </template>

@@ -1,5 +1,7 @@
-<template
-  ><div class="book">
+<template>
+  <div
+    class="flex-shrink-0 w-3/12 p-2 overflow-y-scroll bg-gray-300 rounded shadow-xs"
+  >
     <BookSection
       v-for="bookSection in bookSections"
       :bookCards="bookSection.bookCards"
@@ -23,9 +25,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.book {
-  @apply box-content w-3/12 max-w-sm p-2 m-1 overflow-y-scroll bg-gray-300 rounded shadow-xs;
-}
-</style>
