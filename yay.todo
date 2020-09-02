@@ -7,8 +7,8 @@ Vue:
         [x] フォーマッタ設定する
     BookComponent:
         BookList:
-            [ ] BookList.vue作る
-            [ ] Book一覧表示データバインド
+            [x] BookList.vue作る
+            [x] Book一覧表示データバインド
             [ ] Book新規作成機能
         Book:
             [x] Book.vue作る
