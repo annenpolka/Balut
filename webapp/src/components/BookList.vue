@@ -86,7 +86,7 @@ export default {
           ],
         },
         {
-          id: 1,
+          id: 3,
           bookSections: [
             {
               id: 1,
@@ -121,7 +121,7 @@ export default {
           ],
         },
         {
-          id: 1,
+          id: 4,
           bookSections: [
             {
               id: 1,
@@ -156,7 +156,7 @@ export default {
           ],
         },
         {
-          id: 1,
+          id: 5,
           bookSections: [
             {
               id: 1,

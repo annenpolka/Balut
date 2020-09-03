@@ -13,8 +13,8 @@ Vue:
         Book:
             [x] Book.vue作る
             [x] BookSection一覧表示データバインド
-            [ ] BookSection一覧表示UI
-                [ ] セクション選択・開閉
+            [x] BookSection一覧表示UI
+                [x] セクション選択・開閉
             [ ] BookSection新規作成機能
             [ ] BookCard新規作成機能
                 [ ] BookCreateNewCard.vue作る
@@ -26,7 +26,7 @@ Vue:
             [x] BookSection.vue作る
             [x] BookCard一覧表示データバインド
             [x] BookCard一覧表示UI
-           [ ] カスタムスクロールバー実装する
+            [ ] カスタムスクロールバー実装する
             [ ] BookSectionHeader.vue作る
         BookCard:
             [x] BookCard.vue作る

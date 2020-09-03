@@ -1,12 +1,15 @@
 <template>
   <div
-    class="flex-shrink-0 w-3/12 h-screen p-2 overflow-y-scroll bg-gray-300 rounded shadow-xs"
+    class="flex-shrink-0 w-3/12 h-screen py-2 overflow-y-scroll bg-gray-300 rounded shadow-xs"
   >
     <BookSection
-      v-for="bookSection in bookSections"
+      v-for="(bookSection, index) in bookSections"
       :bookCards="bookSection.bookCards"
       :title="bookSection.title"
       :key="bookSection.id"
+      :index="index"
+      :selectedIndex="selectedIndex"
+      @selected-update="updateSelectedIndex"
     ></BookSection>
   </div>
 </template>
@@ -19,9 +22,15 @@ export default {
     BookSection,
   },
   props: ['bookSections'],
-
+  data() {
+    return {
+      selectedIndex: 0,
+    };
+  },
   methods: {
-    updateSection() {},
+    updateSelectedIndex($event) {
+      this.selectedIndex = $event;
+    },
   },
 };
 </script>

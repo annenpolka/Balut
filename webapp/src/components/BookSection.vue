@@ -1,12 +1,14 @@
 <template>
   <div class="book-section">
-    <p>{{ title }}</p>
-    <book-card
-      v-for="bookCard in bookCards"
-      :cardText="bookCard.text"
-      :key="bookCard.id"
-      @card-update="updateCard($event, bookCard)"
-    ></book-card>
+    <p @click="updateSelectedIndex()">{{ title }}</p>
+    <template v-if="index === selectedIndex">
+      <book-card
+        v-for="bookCard in bookCards"
+        :cardText="bookCard.text"
+        :key="bookCard.id"
+        @card-update="updateCard($event, bookCard)"
+      ></book-card>
+    </template>
   </div>
 </template>
 
@@ -17,11 +19,14 @@ export default {
   components: {
     BookCard,
   },
-  props: ['bookCards', 'title'],
+  props: ['bookCards', 'title', 'index', 'selectedIndex'],
   methods: {
     updateCard($event, bookCard) {
       console.log($event);
       bookCard.text = $event;
+    },
+    updateSelectedIndex() {
+      this.$emit('selected-update', this.index);
     },
   },
 };
@@ -29,6 +34,6 @@ export default {
 
 <style lang="scss" scoped>
 .book-section {
-  @apply box-content p-2 mx-1 my-2 bg-gray-400 rounded shadow-sm;
+  @apply box-content py-1 my-2 bg-gray-400 shadow-sm;
 }
 </style>

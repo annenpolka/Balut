@@ -48,7 +48,7 @@ export default {
 }
 
 .book-card {
-  @apply max-w-sm p-3 my-3 overflow-hidden whitespace-pre-wrap bg-gray-100 rounded shadow-lg;
+  @apply max-w-sm p-3 m-3 overflow-hidden whitespace-pre-wrap bg-gray-100 rounded shadow-lg;
 
   &:hover {
     @apply bg-white;
