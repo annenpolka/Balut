@@ -1,7 +1,7 @@
 <template>
   <div class="book-section">
     <p @click="updateSelectedIndex()">{{ title }}</p>
-    <template v-if="index === selectedIndex">
+    <template v-if="isSelectedIndex">
       <book-card
         v-for="bookCard in bookCards"
         :cardText="bookCard.text"
@@ -20,6 +20,11 @@ export default {
     BookCard,
   },
   props: ['bookCards', 'title', 'index', 'selectedIndex'],
+  computed: {
+    isSelectedIndex() {
+      return this.index === this.selectedIndex;
+    },
+  },
   methods: {
     updateCard($event, bookCard) {
       console.log($event);
