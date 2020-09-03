@@ -31,7 +31,7 @@ export default {
 }
 
 .card-input {
-  @apply resize-none w-full border-transparent;
+  @apply resize-none w-full bg-transparent;
 
   &:focus {
     @apply outline-none;

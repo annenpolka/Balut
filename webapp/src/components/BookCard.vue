@@ -1,7 +1,6 @@
 <template>
-  <div @click="startEditingCard">
+  <div @click="startEditingCard" class="book-card">
     <component
-      class="book-card"
       :is="cardStatus"
       :cardText="cardText"
       @card-update="updateCard"
