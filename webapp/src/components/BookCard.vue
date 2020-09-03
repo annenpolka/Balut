@@ -4,7 +4,7 @@
       class="book-card"
       :is="cardStatus"
       :cardText="cardText"
-      @card-submit="updateCard"
+      @card-update="updateCard"
     ></component>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
       this.isBeingEdited = true;
     },
     updateCard($event) {
-      this.$emit('card-submit', $event);
+      this.$emit('card-update', $event);
       this.isBeingEdited = false;
     },
   },

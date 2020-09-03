@@ -5,7 +5,7 @@
       v-for="bookCard in bookCards"
       :cardText="bookCard.text"
       :key="bookCard.id"
-      @card-submit="updateCard($event, bookCard)"
+      @card-update="updateCard($event, bookCard)"
     ></book-card>
   </div>
 </template>

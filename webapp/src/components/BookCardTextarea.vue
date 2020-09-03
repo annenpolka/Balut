@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     submit($event) {
-      this.$emit('card-submit', $event.target.value);
+      this.$emit('card-update', $event.target.value);
     },
   },
 };

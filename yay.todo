@@ -23,7 +23,7 @@ Vue:
             [x] BookCard一覧表示UI
             [ ] BookCard新規作成機能
                 [ ] BookSectionInput.vue作る
-                [ ] submitNewCard()作る
+                [ ] submit()作る
                 [ ] createNewCard()作る
                 [ ] イベント名見直す
             [ ] カスタムスクロールバー実装する
