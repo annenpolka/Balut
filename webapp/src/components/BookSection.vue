@@ -15,7 +15,7 @@
 
 <script>
 import BookCard from './BookCard';
-import CreateNewCard from './CreateNewCard';
+import CreateNewCard from './BookSectionCreateNewCard';
 export default {
   name: 'BookSection',
   components: {

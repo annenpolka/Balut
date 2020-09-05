@@ -3,6 +3,7 @@
     class="flex-shrink-0 w-3/12 h-screen py-2 overflow-y-scroll bg-gray-300 rounded shadow-xs"
   >
     <p>{{ title }}</p>
+    <CreateNewButton>+ Create new section</CreateNewButton>
     <BookSection
       v-for="(bookSection, index) in bookSections"
       :bookCards="bookSection.bookCards"
@@ -17,10 +18,12 @@
 
 <script>
 import BookSection from './BookSection';
+import CreateNewButton from './CreateNewButton';
 export default {
   name: 'Book',
   components: {
     BookSection,
+    CreateNewButton,
   },
   props: ['bookSections', 'title'],
   data() {
