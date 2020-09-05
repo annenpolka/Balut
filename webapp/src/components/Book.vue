@@ -3,9 +3,17 @@
     class="flex-shrink-0 w-3/12 h-screen py-2 overflow-y-scroll bg-gray-300 rounded shadow-xs"
   >
     <p>{{ title }}</p>
-    <CreateNewButton>+ Create new section</CreateNewButton>
+    <CreateNewButton v-if="!isCreating" @my-click="startCreatingSection()"
+      >+ Create new section</CreateNewButton
+    >
+    <CreateNewTextArea
+      v-if="isCreating"
+      @my-submit="createSection"
+      :placeholder="placeholder"
+    ></CreateNewTextArea>
+
     <BookSection
-      v-for="(bookSection, index) in bookSections"
+      v-for="(bookSection, index) in reverseBookSections"
       :bookCards="bookSection.bookCards"
       :title="bookSection.title"
       :key="bookSection.id"
@@ -19,21 +27,45 @@
 <script>
 import BookSection from './BookSection';
 import CreateNewButton from './CreateNewButton';
+import CreateNewTextArea from './CreateNewTextArea';
 export default {
   name: 'Book',
   components: {
     BookSection,
     CreateNewButton,
+    CreateNewTextArea,
   },
   props: ['bookSections', 'title'],
   data() {
     return {
       selectedIndex: 0,
+      isCreating: false,
+      placeholder: "put your new section's name",
     };
+  },
+  computed: {
+    reverseBookSections() {
+      return this.bookSections.slice().reverse();
+    },
   },
   methods: {
     updateSelectedIndex($event) {
       this.selectedIndex = $event;
+    },
+    startCreatingSection() {
+      this.isCreating = true;
+    },
+    createSection($event) {
+      const id = this.bookSections.length + 1;
+      const title = $event;
+      const bookCards = [];
+      const newSection = {
+        id,
+        title,
+        bookCards,
+      };
+      this.bookSections.push(newSection);
+      this.selectedSection = 0;
     },
   },
 };

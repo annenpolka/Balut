@@ -1,11 +1,20 @@
 <template>
   <button
-    class="px-2 py-1 mx-1 font-bold text-white bg-green-500 rounded hover:bg-green-700"
+    class="px-2 py-1 font-bold bg-gray-200 rounded hover:bg-gray-400"
+    :placeholder="placeholder"
+    @click="onClick"
   >
     <slot></slot>
   </button>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['placeholder'],
+  methods: {
+    onClick() {
+      this.$emit('my-click');
+    },
+  },
+};
 </script>

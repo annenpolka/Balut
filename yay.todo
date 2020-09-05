@@ -16,7 +16,7 @@ Vue:
             [x] BookSection一覧表示データバインド
             [x] BookSection一覧表示UI
                 [x] セクション選択・開閉
-            [ ] BookSection新規作成機能
+            [x] BookSection新規作成機能
                [x] イベント名見直す
             [ ] BookHeader.vue作る
         BookSection:

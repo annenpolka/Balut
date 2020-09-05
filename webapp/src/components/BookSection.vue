@@ -2,7 +2,10 @@
   <div class="book-section">
     <p @click="updateSelectedIndex()">{{ title }}</p>
     <template v-if="isSelectedIndex">
-      <CreateNewCard @card-create="createCard($event)"></CreateNewCard>
+      <CreateNewTextArea
+        :placeholder="placeholder"
+        @my-submit="createCard"
+      ></CreateNewTextArea>
       <book-card
         v-for="bookCard in reverseBookCards"
         :cardText="bookCard.text"
@@ -15,14 +18,19 @@
 
 <script>
 import BookCard from './BookCard';
-import CreateNewCard from './BookSectionCreateNewCard';
+import CreateNewTextArea from './CreateNewTextArea';
 export default {
   name: 'BookSection',
   components: {
     BookCard,
-    CreateNewCard,
+    CreateNewTextArea,
   },
   props: ['bookCards', 'title', 'index', 'selectedIndex'],
+  data() {
+    return {
+      placeholder: 'put your thoughts',
+    };
+  },
   computed: {
     reverseBookCards() {
       return this.bookCards.slice().reverse();
