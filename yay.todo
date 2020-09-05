@@ -17,18 +17,18 @@ Vue:
             [x] BookSection一覧表示UI
                 [x] セクション選択・開閉
             [ ] BookSection新規作成機能
-            [ ] BookCard新規作成機能
-                [ ] BookCreateNewCard.vue作る
-                [ ] submit()作る
-                [ ] createNewCard()作る
-                [x] イベント名見直す
+               [x] イベント名見直す
             [ ] BookHeader.vue作る
         BookSection:
             [x] BookSection.vue作る
             [x] BookCard一覧表示データバインド
             [x] BookCard一覧表示UI
-            [ ] カスタムスクロールバー実装する
+            [x] BookCard新規作成機能
+                [x] CreateNewCard.vue作る
+                [x] submit()作る
+                [x] createNewCard()作る
             [ ] BookSectionHeader.vue作る
+            [ ] カスタムスクロールバー実装する
         BookCard:
             [x] BookCard.vue作る
             [x] 入力フォームデータバインド
@@ -36,6 +36,7 @@ Vue:
                 [ ] 伸縮機能
                 [x] 動的コンポーネント
                 [ ] 編集破棄操作
+                [ ] 編集ボタン
             [ ] BookCardLabel.vue作る
 Spring:
     initializeSpring:

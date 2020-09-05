@@ -2,8 +2,9 @@
   <div class="book-section">
     <p @click="updateSelectedIndex()">{{ title }}</p>
     <template v-if="isSelectedIndex">
+      <CreateNewCard @card-create="createCard($event)"></CreateNewCard>
       <book-card
-        v-for="bookCard in bookCards"
+        v-for="bookCard in reverseBookCards"
         :cardText="bookCard.text"
         :key="bookCard.id"
         @card-update="updateCard($event, bookCard)"
@@ -14,13 +15,18 @@
 
 <script>
 import BookCard from './BookCard';
+import CreateNewCard from './CreateNewCard';
 export default {
   name: 'BookSection',
   components: {
     BookCard,
+    CreateNewCard,
   },
   props: ['bookCards', 'title', 'index', 'selectedIndex'],
   computed: {
+    reverseBookCards() {
+      return this.bookCards.slice().reverse();
+    },
     isSelectedIndex() {
       return this.index === this.selectedIndex;
     },
@@ -29,6 +35,15 @@ export default {
     updateCard($event, bookCard) {
       console.log($event);
       bookCard.text = $event;
+    },
+    createCard($event) {
+      const id = this.bookCards.length + 1;
+      const text = $event;
+      const newCard = {
+        id,
+        text,
+      };
+      this.bookCards.push(newCard);
     },
     updateSelectedIndex() {
       this.$emit('selected-update', this.index);
