@@ -3,6 +3,7 @@
     <book
       v-for="book in books"
       :bookSections="book.bookSections"
+      :title="book.title"
       :key="book.id"
     ></book>
   </div>
@@ -20,6 +21,7 @@ export default {
       books: [
         {
           id: 1,
+          title: 'bookTitle',
           bookSections: [
             {
               id: 1,
@@ -55,6 +57,7 @@ export default {
         },
         {
           id: 2,
+          title: 'bookTitle',
           bookSections: [
             {
               id: 1,
@@ -87,6 +90,7 @@ export default {
         },
         {
           id: 3,
+          title: 'bookTitle',
           bookSections: [
             {
               id: 1,
@@ -122,6 +126,7 @@ export default {
         },
         {
           id: 4,
+          title: 'bookTitle',
           bookSections: [
             {
               id: 1,
@@ -157,6 +162,7 @@ export default {
         },
         {
           id: 5,
+          title: 'bookTitle',
           bookSections: [
             {
               id: 1,

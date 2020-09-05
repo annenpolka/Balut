@@ -2,6 +2,7 @@
   <div
     class="flex-shrink-0 w-3/12 h-screen py-2 overflow-y-scroll bg-gray-300 rounded shadow-xs"
   >
+    <p>{{ title }}</p>
     <BookSection
       v-for="(bookSection, index) in bookSections"
       :bookCards="bookSection.bookCards"
@@ -21,7 +22,7 @@ export default {
   components: {
     BookSection,
   },
-  props: ['bookSections'],
+  props: ['bookSections', 'title'],
   data() {
     return {
       selectedIndex: 0,
