@@ -3,12 +3,13 @@
     class="flex-shrink-0 w-3/12 h-screen py-2 overflow-y-scroll bg-gray-300 rounded shadow-xs"
   >
     <p>{{ title }}</p>
-    <CreateNewButton v-if="!isCreating" @my-click="startCreatingSection()"
+    <CreateNewButton v-if="!isCreating" @my-click="startCreatingSection"
       >+ Create new section</CreateNewButton
     >
     <CreateNewTextArea
       v-if="isCreating"
       @my-submit="createSection"
+      @my-blur="cancelCreatingSection"
       :placeholder="placeholder"
     ></CreateNewTextArea>
 
@@ -55,6 +56,10 @@ export default {
     startCreatingSection() {
       this.isCreating = true;
     },
+    cancelCreatingSection() {
+      this.isCreating = false;
+    },
+
     createSection($event) {
       const id = this.bookSections.length + 1;
       const title = $event;

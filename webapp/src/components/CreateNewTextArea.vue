@@ -2,14 +2,18 @@
   <textarea
     name="newCard"
     v-model="text"
+    ref="newTextArea"
     class="w-full h-10 py-2 my-2 overflow-hidden whitespace-pre-wrap bg-transparent bg-gray-100 shadow-xs outline-none resize-none"
     @keyup.ctrl.enter="submit"
-    @blur="drop"
+    @blur="onBlur"
   />
 </template>
 
 <script>
 export default {
+  mounted() {
+    this.$refs.newTextArea.focus();
+  },
   data() {
     return {
       text: '',
@@ -22,7 +26,8 @@ export default {
         this.text = '';
       }
     },
-    drop() {
+    onBlur() {
+      this.$emit('my-blur');
       this.text = '';
     },
   },
