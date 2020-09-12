@@ -9,8 +9,9 @@ Vue:
         BookList:
             [x] BookList.vue作る
             [x] Book一覧表示データバインド
-            [ ] Book表示切り替え（横スワイプ・スクロール）機能
-            [ ] Book新規作成機能
+            [ ] BookListHeader
+                [ ] Book表示切り替え機能
+                [ ] Book新規作成機能
         Book:
             [x] Book.vue作る
             [x] BookSection一覧表示データバインド

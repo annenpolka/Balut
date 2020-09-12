@@ -1,23 +1,32 @@
 <template>
-  <div class="flex">
-    <book
-      v-for="book in books"
-      :bookSections="book.bookSections"
-      :title="book.title"
-      :key="book.id"
-    ></book>
+  <div>
+    <BookListHeader
+      :books="books"
+      :selectedIndex="selectedIndex"
+    ></BookListHeader>
+    <div class="flex justify-center bg-gray-200">
+      <book
+        :bookSections="selectedBook.bookSections"
+        :title="selectedBook.title"
+        :key="selectedBook.id"
+        class=""
+      ></book>
+    </div>
   </div>
 </template>
 
 <script>
 import Book from './Book';
+import BookListHeader from './BookListHeader';
 export default {
   name: 'BookList',
   components: {
     Book,
+    BookListHeader,
   },
   data() {
     return {
+      selectedIndex: 0,
       books: [
         {
           id: 1,
@@ -198,6 +207,11 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    selectedBook() {
+      return this.books[this.selectedIndex];
+    },
   },
   methods: {
     updateSection() {},
