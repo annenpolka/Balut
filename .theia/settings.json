@@ -1,0 +1,490 @@
+{
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.colorTheme": "Base16 Dark Monokai",
+  "window.zoomLevel": 0,
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.forceDownload": false,
+  "sync.forceUpload": false,
+  "java.debug.settings.hotCodeReplace": "auto",
+  "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/annenpolka/.vscode-server/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+  "git.enableSmartCommit": true,
+  "python.jediEnabled": false,
+  "python.autoComplete.addBrackets": true,
+  "markdownlint.run": "onSave",
+  "git.autofetchPeriod": 90,
+  "git.autofetch": true,
+  "git.postCommitCommand": "push",
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "vsicons.dontShowNewVersionMessage": true,
+  "java.semanticHighlighting.enabled": true,
+  // ここからvim
+  "vim.enableNeovim": false,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.keepEditor"]
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
+      "before": ["<leader>", "@"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    },
+    {
+      "before": ["<leader>", "1"],
+      "commands": ["workbench.action.focusFirstEditorGroup"]
+    },
+    {
+      "before": ["<leader>", "2"],
+      "commands": ["workbench.action.focusSecondEditorGroup"]
+    },
+    {
+      "before": ["<leader>", "3"],
+      "commands": ["workbench.action.focusThirdEditorGroup"]
+    },
+    {
+      "before": ["<leader>", "4"],
+      "commands": ["workbench.action.focusFourthEditorGroup"]
+    },
+    {
+      "before": ["<leader>", "5"],
+      "commands": ["workbench.action.focusFifthEditorGroup"]
+    },
+    {
+      "before": ["<leader>", "6"],
+      "commands": ["workbench.action.focusSixthEditorGroup"]
+    },
+    {
+      "before": ["<leader>", "7"],
+      "commands": ["workbench.action.focusSeventhEditorGroup"]
+    },
+    {
+      "before": ["<leader>", "8"],
+      "commands": ["workbench.action.focusEighthEditorGroup"]
+    },
+    {
+      "before": ["<leader>", "b", "b"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "b", "d"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "b", "D"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["H"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["<leader>", "b", "s"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    },
+    {
+      "before": ["<leader>", "b", "u"],
+      "commands": ["workbench.action.reopenClosedEditor"]
+    },
+    {
+      "before": ["<leader>", "f", "e"],
+      "commands": ["workbench.action.openGlobalSettings"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.files.openFile"]
+    },
+    {
+      "before": ["<leader>", "f", "r"],
+      "commands": ["workbench.action.openRecent"]
+    },
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "f", "S"],
+      "commands": ["workbench.action.files.saveAll"]
+    },
+    {
+      "before": ["<leader>", "f", "t"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "f", "T"],
+      "commands": ["workbench.files.action.showActiveFileInExplorer"]
+    },
+    {
+      "before": ["<leader>", "f", "y"],
+      "commands": ["workbench.action.files.copyPathOfActiveFile"]
+    },
+    {
+      "before": ["<leader>", "g", "b"],
+      "commands": ["git.checkout"]
+    },
+    {
+      "before": ["<leader>", "g", "c"],
+      "commands": ["git.commit"]
+    },
+    {
+      "before": ["<leader>", "g", "d"],
+      "commands": ["git.deleteBranch"]
+    },
+    {
+      "before": ["<leader>", "g", "f"],
+      "commands": ["git.fetch"]
+    },
+    {
+      "before": ["<leader>", "g", "i"],
+      "commands": ["git.init"]
+    },
+    {
+      "before": ["<leader>", "g", "m"],
+      "commands": ["git.merge"]
+    },
+    {
+      "before": ["<leader>", "g", "p"],
+      "commands": ["git.publish"]
+    },
+    {
+      "before": ["<leader>", "g", "s"],
+      "commands": ["workbench.view.scm"]
+    },
+    {
+      "before": ["<leader>", "g", "S"],
+      "commands": ["git.stage"]
+    },
+    {
+      "before": ["<leader>", "g", "U"],
+      "commands": ["git.unstage"]
+    },
+    {
+      "before": ["<leader>", "h", "d"],
+      "commands": ["workbench.action.openGlobalKeybindings"]
+    },
+    {
+      "before": ["<leader>", "i", "s"],
+      "commands": ["editor.action.insertSnippet"]
+    },
+    {
+      "before": ["<leader>", "w", "-"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<leader>", "w", "/"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+      "before": ["<leader>", "w", "d"],
+      "commands": ["workbench.action.closeEditorsInGroup"]
+    },
+    {
+      "before": ["<leader>", "w", "h"],
+      "commands": ["workbench.action.focusPreviousGroup"]
+    },
+    {
+      "before": ["<leader>", "w", "H"],
+      "commands": ["workbench.action.moveActiveEditorGroupLeft"]
+    },
+    {
+      "before": ["<leader>", "w", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["<leader>", "w", "J"],
+      "commands": ["workbench.action.moveActiveEditorGroupDown"]
+    },
+    {
+      "before": ["<leader>", "w", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<leader>", "w", "K"],
+      "commands": ["workbench.action.moveActiveEditorGroupUp"]
+    },
+    {
+      "before": ["<leader>", "w", "l"],
+      "commands": ["workbench.action.focusNextGroup"]
+    },
+    {
+      "before": ["<leader>", "w", "L"],
+      "commands": ["workbench.action.moveActiveEditorGroupRight"]
+    },
+    {
+      "before": ["<leader>", "w", "m"],
+      "commands": ["workbench.action.toggleEditorWidths"]
+    },
+    {
+      "before": ["<leader>", "w", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<leader>", "w", "v"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "w", "w"],
+      "commands": ["workbench.action.focusNextGroup"]
+    },
+    {
+      "before": ["<leader>", "w", "W"],
+      "commands": ["workbench.action.focusPreviousGroup"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<Enter>"],
+      "commands": ["editor.action.insertLineAfter"]
+    },
+    //easy motion
+    // {
+    //   "before": ["f"],
+    //   "after": ["<Leader>", "<Leader>", "2", "s"]
+    // },
+    {
+      "before": ["<leader>", "m", "b"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["<leader>", "m", "l"],
+      "commands": ["bookmarks.list"]
+    },
+    {
+      "before": ["Z", "Z"],
+      "commands": [":wq"]
+    },
+    {
+      "before": ["J"],
+      "after": ["1", "0", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["1", "0", "k"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-l>": false,
+    "<C-w>": false,
+    "<C-d>": false,
+    "<C-y>": false
+  },
+  "vim.whichwrap": "h,l,<,>,[,]", // 折返し
+  "vim.sneakReplacesF": true,
+  "vim.sneak": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "vim.visualstar": true, // // ここまでvim
+  "files.trimTrailingWhitespace": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.minimap.scale": 1,
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "editor.minimap.enabled": false,
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "gitlens.views.repositories.branches.layout": "list",
+  "explorer.confirmDelete": false,
+  "sql-formatter.uppercase": true,
+  "extensions.ignoreRecommendations": false,
+  "editor.formatOnSave": true,
+  "hediet.vscode-drawio.local-storage": {
+    ".drawio-config": {
+      "language": "",
+      "customFonts": [],
+      "libraries": "general;uml;er;bpmn;flowchart;basic;arrows2",
+      "customLibraries": ["L.scratchpad"],
+      "plugins": [],
+      "recentColors": [],
+      "formatWidth": 0,
+      "createTarget": false,
+      "pageFormat": {
+        "x": 0,
+        "y": 0,
+        "width": 827,
+        "height": 1169
+      },
+      "search": true,
+      "showStartScreen": true,
+      "gridColor": "#d0d0d0",
+      "darkGridColor": "#6e6e6e",
+      "autosave": true,
+      "resizeImages": null,
+      "openCounter": 0,
+      "version": 18,
+      "unit": 1,
+      "isRulerOn": false,
+      "ui": ""
+    }
+  },
+  "files.autoSave": "afterDelay",
+  "prettier.packageManager": "yarn",
+  // Vue絡み
+  "editor.codeActionsOnSave": {
+    // ESLintに対応しているファイルはESLintによるフォーマットを行う
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true,
+    "source.fixAll": true
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript"],
+  // vetur側のフォーマットを使わないって設定っぽい
+  "vetur.format.defaultFormatter.css": "prettier",
+  "vetur.format.defaultFormatter.scss": "prettier",
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatter.ts": "vscode-typescript",
+  "vetur.validation.template": false,
+  // Vue絡みここまで
+  "explorer.confirmDragAndDrop": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "todohighlight.keywords": [
+    {
+      "text": "DEBUG:",
+      "color": "#FFFFFF",
+      "backgroundColor": "#dd5706"
+    },
+    {
+      "text": "NOTE:",
+      "color": "#FFFFFF",
+      "backgroundColor": "#2741a0"
+    },
+    {
+      "text": "HACK:",
+      "color": "#FFFFFF",
+      "backgroundColor": "#a0275d"
+    },
+    {
+      "text": "TODO:",
+      "color": "#FFF",
+      "backgroundColor": "#30730f"
+    },
+    {
+      "text": "FIXME",
+      "color": "#FFF",
+      "backgroundColor": "#e808ab"
+    }
+  ],
+  "todohighlight.defaultStyle": {
+    "isWholeLine": true
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.renameOnType": true,
+  "zenMode.hideLineNumbers": false,
+  "editor.cursorSurroundingLines": 8,
+  "bracket-pair-colorizer-2.highlightActiveScope": true,
+  "bracket-pair-colorizer-2.scopeLineCSS": [
+    "borderStyle : solid",
+    "borderWidth : 1.5px",
+    "borderColor : {color}",
+    "opacity: 0.7"
+  ],
+  "todo.symbols.box": "[ ]",
+  "todo.symbols.cancelled": "[-]",
+  "todo.symbols.done": "[x]",
+  "todo.file.defaultContent": "Todo:  [ ] Item",
+  "editor.matchBrackets": "never",
+  "bracket-pair-colorizer-2.forceIterationColorCycle": true,
+  "prettier.singleQuote": true,
+  "terminal.external.linuxExec": "zsh",
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "codic.case": "camelCase",
+  "codic.ACCESS_TOKEN": "McL5CCSUxzSlMz2zD3lUTuqe4AtTkAkV2E",
+  "terminal.integrated.fontFamily": "Myrica",
+  "terminal.integrated.fontSize": 16,
+  "editor.fontFamily": "Fira Code,HackGenNerd,Cica,Consolas, 'Courier New', monospace",
+  "todo.statistics.statusbar.enabled": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "editor.fontSize": 16,
+  "python.languageServer": "Microsoft",
+  "html.autoClosingTags": false,
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "prettier.jsxSingleQuote": true,
+  "htmlhint.options": {
+    "empty-tag-not-self-closed": true,
+    "spec-char-escape": false
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "htmlhint.documentSelector": ["html", "htm"],
+  "bracket-pair-colorizer-2.excludedLanguages": [],
+  "cSpell.userWords": [
+    "Arial",
+    "Avenir",
+    "Helvetica",
+    "Parens",
+    "Vuex",
+    "axios",
+    "browserslist",
+    "devtools",
+    "grayscale",
+    "hoge",
+    "keyup",
+    "noopener",
+    "semibold",
+    "tailwindcss",
+    "vuetify"
+  ],
+  "cSpell.enableFiletypes": ["vue", "vue-html", "vue-postcss"],
+  "settingsSync.ignoredSettings": [],
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "vue": "html",
+    "vue-html": "html",
+    "vue-postcss": "html",
+    "plaintext": "html"
+  },
+  "githubIssues.queries": [
+    {
+      "label": "My Issues",
+      "query": "default"
+    },
+    {
+      "label": "Created Issues",
+      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+    }
+  ],
+  "editor.fontLigatures": true
+}
