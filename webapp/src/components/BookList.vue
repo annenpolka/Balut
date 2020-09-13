@@ -2,7 +2,7 @@
   <div>
     <BookListHeader
       :books="books"
-      :selectedIndex="selectedIndex"
+      :selectedBookTitle="selectedBook.title"
     ></BookListHeader>
     <div class="flex justify-center bg-gray-200">
       <book
@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      selectedIndex: 0,
+      selectedId: 1,
       books: [
         {
           id: 1,
@@ -210,7 +210,7 @@ export default {
   },
   computed: {
     selectedBook() {
-      return this.books[this.selectedIndex];
+      return this.books.find((book) => book.id === this.selectedId);
     },
   },
   methods: {

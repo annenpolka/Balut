@@ -4,26 +4,7 @@
       <span class="">Balut</span>
     </div>
     <div class="flex items-center mr-6 text-white">
-      <span class="">{{ selectedBook.title }} </span>
-      <svg
-        role="img"
-        xmlns="http://www.w3.org/2000/svg"
-        width="20px"
-        height="20px"
-        viewBox="0 0 24 24"
-        aria-labelledby="dropIconTitle"
-        stroke="#F0F0F0"
-        stroke-width="2.25"
-        stroke-linecap="round"
-        stroke-linejoin="miter"
-        fill="none"
-        color="#F0F0F0"
-      >
-        <title id="dropIconTitle">Drop</title>
-        <path
-          d="M12,21 C15.3137085,21 18,18.3904147 18,15 C18,11.6666667 16,8 12,4 C8,8 6,11.6666667 6,15 C6,18.3904147 8.6862915,21 12,21 Z"
-        />
-      </svg>
+      <span class="">{{ selectedBookTitle }} </span>
     </div>
     <div>
       <a
@@ -37,13 +18,8 @@
 
 <script>
 export default {
-  props: ['books', 'selectedIndex'],
-  computed: {
-    selectedBook() {
-      return this.books[this.selectedIndex];
-    },
-  },
+  props: ['books', 'selectedBookTitle'],
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>
