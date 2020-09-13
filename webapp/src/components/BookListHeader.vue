@@ -3,8 +3,9 @@
     <div class="mr-6 font-semibold text-white">
       <span class="">Balut</span>
     </div>
-    <div class="flex items-center mr-6 text-white">
-      <span class="">{{ selectedBookTitle }} </span>
+    <div class="flex items-center mr-6 text-lg text-white">
+      <span class="">{{ selectedBookTitle }}</span>
+      <font-awesome-icon icon="chevron-down" class="mx-2 text-sm" />
     </div>
     <div>
       <a

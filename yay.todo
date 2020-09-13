@@ -12,6 +12,9 @@ Vue:
             [ ] BookListHeader
                 [ ] Book表示切り替え機能
                 [ ] Book新規作成機能
+                [ ] AppDropdown
+                    [ ] リスト表示
+                    [ ] onClickイベント
         Book:
             [x] Book.vue作る
             [x] BookSection一覧表示データバインド
