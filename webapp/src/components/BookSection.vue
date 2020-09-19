@@ -62,6 +62,6 @@ export default {
 
 <style lang="scss" scoped>
 .book-section {
-  @apply box-content py-1 my-2 bg-gray-400 shadow-sm;
+  @apply box-content p-1 my-2 bg-gray-400 shadow-sm rounded;
 }
 </style>

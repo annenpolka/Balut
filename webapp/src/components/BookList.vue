@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="h-screen bg-gray-100">
     <BookListHeader
       :books="books"
       :selectedBookTitle="selectedBook.title"
+      :selectedBookId="selectedBook.id"
     ></BookListHeader>
-    <div class="flex justify-center bg-gray-200">
+    <div class="flex justify-center py-4">
       <book
         :bookSections="selectedBook.bookSections"
         :title="selectedBook.title"

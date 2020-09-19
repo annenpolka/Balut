@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex-shrink-0 w-3/12 h-screen py-2 overflow-y-scroll bg-gray-300 rounded shadow-xs"
+    class="p-1 overflow-y-scroll bg-gray-300 rounded shadow-xs w-96 min-h-screen-screen/5"
   >
     <p>{{ title }}</p>
     <CreateNewButton v-if="!isCreating" @my-click="startCreatingSection"
