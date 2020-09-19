@@ -1,10 +1,17 @@
 <template>
-  <nav class="flex items-center justify-between p-3 bg-green-600 select-none">
+  <nav
+    class="sticky top-0 flex items-center justify-between p-3 bg-green-600 select-none"
+  >
     <div class="mr-6 font-semibold text-white">
       <span class="">Balut</span>
     </div>
-    <div class="flex items-center mr-6 text-lg text-white">
-      <span class="">{{ selectedBookTitle }}</span>
+    <div class="flex items-center mr-6 text-lg text-white ">
+      <span class="" @click="showDropdown">{{ selectedBookTitle }}</span>
+      <AppDropdown
+        class="absolute p-2 top-12"
+        v-if="isDisplayingDropdown"
+        :list="dropDownList"
+      ></AppDropdown>
       <font-awesome-icon icon="chevron-down" class="mx-2 text-sm" />
     </div>
     <div>
@@ -18,8 +25,29 @@
 </template>
 
 <script>
+import AppDropdown from './AppDropdown';
 export default {
-  props: ['books', 'selectedBookTitle'],
+  components: { AppDropdown },
+  props: ['books', 'selectedBookTitle', 'selectedBookId'],
+  data() {
+    return {
+      isDisplayingDropdown: false,
+    };
+  },
+  methods: {
+    showDropdown() {
+      this.isDisplayingDropdown = true;
+    },
+  },
+  computed: {
+    dropDownList() {
+      return this.books.map((book) => ({
+        id: book.id,
+        title: book.title,
+        selected: book.id === this.selectedBookId,
+      }));
+    },
+  },
 };
 </script>
 
