@@ -31,7 +31,7 @@ export default {
       books: [
         {
           id: 1,
-          title: 'bookTitle',
+          title: 'Principal Data Analyst',
           bookSections: [
             {
               id: 1,
@@ -67,7 +67,7 @@ export default {
         },
         {
           id: 2,
-          title: 'bookTitle',
+          title: 'Investor Response Architect',
           bookSections: [
             {
               id: 1,
@@ -100,7 +100,7 @@ export default {
         },
         {
           id: 3,
-          title: 'bookTitle',
+          title: 'Corporate Creative Planner',
           bookSections: [
             {
               id: 1,
@@ -136,7 +136,7 @@ export default {
         },
         {
           id: 4,
-          title: 'bookTitle',
+          title: 'Direct Group Officer',
           bookSections: [
             {
               id: 1,
@@ -172,7 +172,7 @@ export default {
         },
         {
           id: 5,
-          title: 'bookTitle',
+          title: 'Legacy Research Administrator',
           bookSections: [
             {
               id: 1,

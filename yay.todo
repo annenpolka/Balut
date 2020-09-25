@@ -13,7 +13,7 @@ Vue:
                 [ ] Book表示切り替え機能
                 [ ] Book新規作成機能
                 [ ] AppDropdown
-                    [ ] リスト表示
+                    [x] リスト表示
                     [ ] onClickイベント
         Book:
             [x] Book.vue作る
