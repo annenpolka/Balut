@@ -4,6 +4,7 @@
       :books="books"
       :selectedBookTitle="selectedBook.title"
       :selectedBookId="selectedBook.id"
+      @change-book="changeSelectedBook"
     ></BookListHeader>
     <div class="flex justify-center py-4">
       <book
@@ -216,6 +217,9 @@ export default {
   },
   methods: {
     updateSection() {},
+    changeSelectedBook($event) {
+      this.selectedId = $event;
+    },
   },
 };
 </script>

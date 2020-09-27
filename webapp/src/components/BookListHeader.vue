@@ -11,6 +11,7 @@
         class="absolute p-2 top-12"
         v-if="isDisplayingDropdown"
         :list="dropDownList"
+        @my-click="changeSelectedBook"
       ></AppDropdown>
       <font-awesome-icon icon="chevron-down" class="mx-2 text-sm" />
     </div>
@@ -37,6 +38,10 @@ export default {
   methods: {
     showDropdown() {
       this.isDisplayingDropdown = true;
+    },
+    changeSelectedBook($event) {
+      this.$emit('change-book', $event);
+      this.isDisplayingDropdown = false;
     },
   },
   computed: {

@@ -5,11 +5,16 @@
         :key="thing.id"
         v-if="thing.selected"
         class="p-2 text-green-600"
-        @click="onClick"
+        @click="onClick(thing.id)"
       >
         {{ thing.title }}
       </li>
-      <li :key="thing.id" v-if="!thing.selected" class="p-2" @click="onClick">
+      <li
+        :key="thing.id"
+        v-if="!thing.selected"
+        class="p-2"
+        @click="onClick(thing.id)"
+      >
         {{ thing.title }}
       </li>
     </template>
@@ -21,7 +26,7 @@ export default {
   props: ['list'],
   methods: {
     onClick($event) {
-      this.$emit('my-click', $event.target.value);
+      this.$emit('my-click', $event);
     },
   },
 };
