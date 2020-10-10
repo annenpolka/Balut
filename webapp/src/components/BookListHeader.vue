@@ -13,7 +13,11 @@
         :list="dropDownList"
         @my-click="changeSelectedBook"
       ></AppDropdown>
-      <font-awesome-icon icon="chevron-down" class="mx-2 text-sm" />
+      <font-awesome-icon
+        icon="chevron-down"
+        @click="showDropdown"
+        class="mx-2 text-sm"
+      />
     </div>
     <div>
       <a
@@ -37,7 +41,7 @@ export default {
   },
   methods: {
     showDropdown() {
-      this.isDisplayingDropdown = true;
+      this.isDisplayingDropdown = !this.isDisplayingDropdown;
     },
     changeSelectedBook($event) {
       this.$emit('change-book', $event);
