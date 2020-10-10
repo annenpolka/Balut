@@ -19,7 +19,12 @@
         class="mx-2 text-sm"
       />
     </div>
+
     <div>
+      <font-awesome-icon
+        icon="search"
+        class="mr-8 text-lg text-white"
+      ></font-awesome-icon>
       <a
         href="#"
         class="px-3 py-2 mt-2 text-sm leading-none text-white border border-white rounded hover:border-transparent hover:text-teal-500 hover:bg-white lg:mt-0"
