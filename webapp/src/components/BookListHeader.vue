@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="sticky top-0 flex items-center justify-between p-3 bg-green-600 select-none"
+    class="sticky top-0 flex items-center justify-between p-3 bg-green-500 select-none"
   >
     <div class="mr-6 font-semibold text-white">
       <span class="">Balut</span>

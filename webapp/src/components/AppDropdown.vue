@@ -4,7 +4,7 @@
       <li
         :key="thing.id"
         v-if="thing.selected"
-        class="p-2 text-green-600"
+        class="p-2 text-green-500"
         @click="onClick(thing.id)"
       >
         {{ thing.title }}
