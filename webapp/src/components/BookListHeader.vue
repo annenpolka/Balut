@@ -18,13 +18,18 @@
         @click="showDropdown"
         class="mx-2 text-sm"
       />
-    </div>
-
-    <div>
       <font-awesome-icon
         icon="search"
-        class="mr-8 text-lg text-white"
+        class="text-lg"
+        @click="showSearchModal"
       ></font-awesome-icon>
+      <BookSearchModal
+        v-if="isDisplayingSearchModal"
+        :bookCards="allBookCards"
+        @my-close="closeSearchModal"
+      ></BookSearchModal>
+    </div>
+    <div class="">
       <a
         href="#"
         class="px-3 py-2 mt-2 text-sm leading-none text-white border border-white rounded hover:border-transparent hover:text-teal-500 hover:bg-white lg:mt-0"
@@ -36,12 +41,14 @@
 
 <script>
 import AppDropdown from './AppDropdown';
+import BookSearchModal from './BookSearchModal';
 export default {
-  components: { AppDropdown },
+  components: { AppDropdown, BookSearchModal },
   props: ['books', 'selectedBookTitle', 'selectedBookId'],
   data() {
     return {
       isDisplayingDropdown: false,
+      isDisplayingSearchModal: false,
     };
   },
   methods: {
@@ -52,6 +59,13 @@ export default {
       this.$emit('change-book', $event);
       this.isDisplayingDropdown = false;
     },
+
+    showSearchModal() {
+      this.isDisplayingSearchModal = true;
+    },
+    closeSearchModal() {
+      this.isDisplayingSearchModal = false;
+    },
   },
   computed: {
     dropDownList() {
@@ -60,6 +74,15 @@ export default {
         title: book.title,
         selected: book.id === this.selectedBookId,
       }));
+    },
+    allBookCards() {
+      const allBookSections = this.books
+        .map((book) => book.bookSections)
+        .flat();
+      const allBookCards = allBookSections
+        .map((section) => section.bookCards)
+        .flat();
+      return allBookCards;
     },
   },
 };
