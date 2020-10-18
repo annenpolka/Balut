@@ -1,7 +1,7 @@
 <template>
   <div class="book-section">
     <p @click="updateSelectedIndex()">{{ title }}</p>
-    <template v-if="isSelectedIndex">
+    <template v-if="isSelectedId">
       <CreateNewTextArea
         :placeholder="placeholder"
         @my-submit="createCard"
@@ -9,6 +9,9 @@
       <book-card
         v-for="bookCard in reverseBookCards"
         :cardText="bookCard.text"
+        :cardId="bookCard.id"
+        :parentBookId="bookCard.parentBookId"
+        :parentSectionId="bookCard.parentSectionId"
         :key="bookCard.id"
         @card-update="updateCard($event, bookCard)"
       ></book-card>
@@ -25,7 +28,7 @@ export default {
     BookCard,
     CreateNewTextArea,
   },
-  props: ['bookCards', 'title', 'index', 'selectedIndex'],
+  props: ['bookCards', 'title', 'index', 'id', 'selectedId'],
   data() {
     return {
       placeholder: 'put your thoughts',
@@ -35,8 +38,8 @@ export default {
     reverseBookCards() {
       return this.bookCards.slice().reverse();
     },
-    isSelectedIndex() {
-      return this.index === this.selectedIndex;
+    isSelectedId() {
+      return this.id === this.selectedId;
     },
   },
   methods: {
@@ -54,7 +57,7 @@ export default {
       this.bookCards.push(newCard);
     },
     updateSelectedIndex() {
-      this.$emit('selected-update', this.index);
+      this.$emit('selected-update', this.id);
     },
   },
 };

@@ -5,12 +5,15 @@
       :selectedBookTitle="selectedBook.title"
       :selectedBookId="selectedBook.id"
       @change-book="changeSelectedBook"
+      @change-searched="openSearchedBookAndSection"
     ></BookListHeader>
     <div class="flex justify-center py-4">
       <book
         :bookSections="selectedBook.bookSections"
         :title="selectedBook.title"
+        :selectedId="selectedSectionId"
         :key="selectedBook.id"
+        @my-select="updateSelectedSectionId"
         class=""
       ></book>
     </div>
@@ -29,6 +32,7 @@ export default {
   data() {
     return {
       selectedId: 1,
+      selectedSectionId: 1,
       books: [
         {
           id: 1,
@@ -42,9 +46,9 @@ export default {
                 { id: 1, parentBookId: 1, parentSectionId: 1, text: 'hoge' },
                 { id: 2, parentBookId: 1, parentSectionId: 1, text: 'foo' },
                 { id: 3, parentBookId: 1, parentSectionId: 1, text: 'bar' },
-                { id: 4, parentBookId: 1, parentSectionId: 1, text: 'bar' },
-                { id: 5, parentBookId: 1, parentSectionId: 1, text: 'bar' },
-                { id: 6, parentBookId: 1, parentSectionId: 1, text: 'bar' },
+                { id: 4, parentBookId: 1, parentSectionId: 1, text: '434.00' },
+                { id: 5, parentBookId: 1, parentSectionId: 1, text: '2' },
+                { id: 6, parentBookId: 1, parentSectionId: 1, text: '84818' },
               ],
             },
             {
@@ -62,9 +66,14 @@ export default {
               parentBookId: 1,
               title: 'SectionTitle3',
               bookCards: [
-                { id: 1, parentBookId: 1, parentSectionId: 3, text: 'hoge' },
-                { id: 2, parentBookId: 1, parentSectionId: 3, text: 'foo' },
-                { id: 3, parentBookId: 1, parentSectionId: 3, text: 'bar' },
+                { id: 1, parentBookId: 1, parentSectionId: 3, text: 'Mouse' },
+                {
+                  id: 2,
+                  parentBookId: 1,
+                  parentSectionId: 3,
+                  text: 'Refined Cotton Shoes',
+                },
+                { id: 3, parentBookId: 1, parentSectionId: 3, text: 'Shoes' },
               ],
             },
           ],
@@ -76,14 +85,9 @@ export default {
             {
               id: 1,
               parentBookId: 2,
-              title: 'SectionTitle',
+              title: 'rerum',
               bookCards: [
-                { id: 1, parentBookId: 2, parentSectionId: 1, text: 'hoge' },
-                { id: 2, parentBookId: 2, parentSectionId: 1, text: 'foo' },
-                { id: 3, parentBookId: 2, parentSectionId: 1, text: 'bar' },
-                { id: 4, parentBookId: 2, parentSectionId: 1, text: 'bar' },
-                { id: 5, parentBookId: 2, parentSectionId: 1, text: 'bar' },
-                { id: 6, parentBookId: 2, parentSectionId: 1, text: 'bar' },
+                { id: 1, parentBookId: 2, parentSectionId: 1, text: 'Desiree' },
               ],
             },
             {
@@ -91,19 +95,24 @@ export default {
               parentBookId: 2,
               title: 'SectionTitle2',
               bookCards: [
-                { id: 1, parentBookId: 2, parentSectionId: 2, text: 'h' },
-                { id: 2, parentBookId: 2, parentSectionId: 2, text: 'f' },
-                { id: 3, parentBookId: 2, parentSectionId: 2, text: 'b' },
-              ],
-            },
-            {
-              id: 3,
-              parentBookId: 2,
-              title: 'SectionTitle3',
-              bookCards: [
-                { id: 1, parentBookId: 2, parentSectionId: 3, text: 'hoge' },
-                { id: 2, parentBookId: 2, parentSectionId: 3, text: 'foo' },
-                { id: 3, parentBookId: 2, parentSectionId: 3, text: 'bar' },
+                {
+                  id: 1,
+                  parentBookId: 2,
+                  parentSectionId: 2,
+                  text: 'ugiat at illumh',
+                },
+                {
+                  id: 2,
+                  parentBookId: 2,
+                  parentSectionId: 2,
+                  text: 'suscipit-quia-minus',
+                },
+                {
+                  id: 3,
+                  parentBookId: 2,
+                  parentSectionId: 2,
+                  text: 'A molestiae ea eaque libero nostrum.',
+                },
               ],
             },
           ],
@@ -117,12 +126,13 @@ export default {
               parentBookId: 3,
               title: 'SectionTitle',
               bookCards: [
-                { id: 1, parentBookId: 3, parentSectionId: 1, text: 'hoge' },
-                { id: 2, parentBookId: 3, parentSectionId: 1, text: 'foo' },
-                { id: 3, parentBookId: 3, parentSectionId: 1, text: 'bar' },
-                { id: 4, parentBookId: 3, parentSectionId: 1, text: 'bar' },
-                { id: 5, parentBookId: 3, parentSectionId: 1, text: 'bar' },
-                { id: 6, parentBookId: 3, parentSectionId: 1, text: 'bar' },
+                { id: 1, parentBookId: 3, parentSectionId: 1, text: 'blue' },
+                {
+                  id: 2,
+                  parentBookId: 3,
+                  parentSectionId: 1,
+                  text: 'Practical',
+                },
               ],
             },
             {
@@ -131,8 +141,6 @@ export default {
               title: 'SectionTitle2',
               bookCards: [
                 { id: 1, parentBookId: 3, parentSectionId: 2, text: 'h' },
-                { id: 2, parentBookId: 3, parentSectionId: 2, text: 'f' },
-                { id: 3, parentBookId: 3, parentSectionId: 2, text: 'b' },
               ],
             },
             {
@@ -140,87 +148,9 @@ export default {
               parentBookId: 3,
               title: 'SectionTitle3',
               bookCards: [
-                { id: 1, parentBookId: 3, parentSectionId: 3, text: 'hoge' },
-                { id: 2, parentBookId: 3, parentSectionId: 3, text: 'foo' },
-                { id: 3, parentBookId: 3, parentSectionId: 3, text: 'bar' },
-              ],
-            },
-          ],
-        },
-        {
-          id: 4,
-          title: 'Direct Group Officer',
-          bookSections: [
-            {
-              id: 1,
-              parentBookId: 4,
-              title: 'SectionTitle',
-              bookCards: [
-                { id: 1, parentBookId: 4, parentSectionId: 1, text: 'hoge' },
-                { id: 2, parentBookId: 4, parentSectionId: 1, text: 'foo' },
-                { id: 3, parentBookId: 4, parentSectionId: 1, text: 'bar' },
-                { id: 4, parentBookId: 4, parentSectionId: 1, text: 'bar' },
-                { id: 5, parentBookId: 4, parentSectionId: 1, text: 'bar' },
-                { id: 6, parentBookId: 4, parentSectionId: 1, text: 'bar' },
-              ],
-            },
-            {
-              id: 2,
-              parentBookId: 4,
-              title: 'SectionTitle2',
-              bookCards: [
-                { id: 1, parentBookId: 4, parentSectionId: 2, text: 'hoge' },
-                { id: 2, parentBookId: 4, parentSectionId: 2, text: 'foo' },
-                { id: 3, parentBookId: 4, parentSectionId: 2, text: 'bar' },
-              ],
-            },
-            {
-              id: 3,
-              parentBookId: 4,
-              title: 'SectionTitle3',
-              bookCards: [
-                { id: 1, parentBookId: 4, parentSectionId: 2, text: 'hoge' },
-                { id: 2, parentBookId: 4, parentSectionId: 2, text: 'foo' },
-                { id: 3, parentBookId: 4, parentSectionId: 2, text: 'bar' },
-              ],
-            },
-          ],
-        },
-        {
-          id: 5,
-          title: 'Legacy Research Administrator',
-          bookSections: [
-            {
-              id: 1,
-              parentBookId: 5,
-              title: 'SectionTitle',
-              bookCards: [
-                { id: 1, parentBookId: 5, parentSectionId: 1, text: 'hoge' },
-                { id: 2, parentBookId: 5, parentSectionId: 1, text: 'foo' },
-                { id: 3, parentBookId: 5, parentSectionId: 1, text: 'bar' },
-                { id: 4, parentBookId: 5, parentSectionId: 1, text: 'bar' },
-                { id: 5, parentBookId: 5, parentSectionId: 1, text: 'bar' },
-                { id: 6, parentBookId: 5, parentSectionId: 1, text: 'bar' },
-              ],
-            },
-            {
-              id: 2,
-              parentBookId: 5,
-              title: 'SectionTitle2',
-              bookCards: [
-                { id: 1, parentBookId: 5, parentSectionId: 2, text: 'hoge' },
-                { id: 2, parentBookId: 5, parentSectionId: 2, text: 'foo' },
-                { id: 3, parentBookId: 5, parentSectionId: 2, text: 'bar' },
-              ],
-            },
-            {
-              id: 3,
-              parentBookId: 5,
-              title: 'SectionTitle3',
-              bookCards: [
-                { id: 1, parentBookId: 5, parentSectionId: 3, text: 'hoge' },
-                { id: 2, parentBookId: 5, parentSectionId: 3, text: 'foo' },
-                { id: 3, parentBookId: 5, parentSectionId: 3, text: 'bar' },
+                { id: 1, parentBookId: 3, parentSectionId: 3, text: 'test' },
+                { id: 2, parentBookId: 3, parentSectionId: 3, text: 'search' },
+                { id: 3, parentBookId: 3, parentSectionId: 3, text: 'テスト' },
               ],
             },
           ],
@@ -234,9 +164,16 @@ export default {
     },
   },
   methods: {
-    updateSection() {},
+    updateSelectedSectionId($event) {
+      this.selectedSectionId = $event;
+    },
     changeSelectedBook($event) {
       this.selectedId = $event;
+      this.selectedSectionId = 1;
+    },
+    openSearchedBookAndSection($event) {
+      this.selectedId = $event.parentBookId;
+      this.selectedSectionId = $event.parentSectionId;
     },
   },
 };

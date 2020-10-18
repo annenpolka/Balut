@@ -17,10 +17,11 @@
       v-for="(bookSection, index) in reverseBookSections"
       :bookCards="bookSection.bookCards"
       :title="bookSection.title"
+      :id="bookSection.id"
       :key="bookSection.id"
       :index="index"
-      :selectedIndex="selectedIndex"
-      @selected-update="updateSelectedIndex"
+      :selectedId="selectedId"
+      @selected-update="updateSelectedId"
     ></BookSection>
   </div>
 </template>
@@ -36,10 +37,9 @@ export default {
     CreateNewButton,
     CreateNewTextArea,
   },
-  props: ['bookSections', 'title'],
+  props: ['bookSections', 'title', 'selectedId'],
   data() {
     return {
-      selectedIndex: 0,
       isCreating: false,
       placeholder: "put your new section's name",
     };
@@ -50,8 +50,8 @@ export default {
     },
   },
   methods: {
-    updateSelectedIndex($event) {
-      this.selectedIndex = $event;
+    updateSelectedId($event) {
+      this.$emit('my-select', $event);
     },
     startCreatingSection() {
       this.isCreating = true;
@@ -70,7 +70,7 @@ export default {
         bookCards,
       };
       this.bookSections.push(newSection);
-      this.selectedSection = 0;
+      this.$emit('my-select', id);
     },
   },
 };

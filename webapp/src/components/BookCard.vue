@@ -1,5 +1,5 @@
 <template>
-  <div @click="startEditingCard" class="book-card">
+  <div @click="cardClicked" class="book-card">
     <component
       :is="cardStatus"
       :cardText="cardText"
@@ -18,6 +18,8 @@ export default {
   },
   props: {
     cardText: String,
+    parentBookId: Number,
+    parentSectionId: Number,
   },
   data() {
     return {
@@ -30,7 +32,11 @@ export default {
     },
   },
   methods: {
-    startEditingCard() {
+    cardClicked() {
+      this.$emit('my-click', {
+        parentBookId: this.parentBookId,
+        parentSectionId: this.parentSectionId,
+      });
       this.isBeingEdited = true;
     },
     updateCard($event) {
@@ -47,7 +53,7 @@ export default {
 }
 
 .book-card {
-  @apply p-3 m-3 overflow-hidden whitespace-pre-wrap bg-gray-100 rounded shadow-lg;
+  @apply p-3 m-3 overflow-hidden whitespace-pre-wrap bg-gray-100 rounded shadow-lg text-black;
 
   &:hover {
     @apply bg-white;

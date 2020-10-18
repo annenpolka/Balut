@@ -26,6 +26,7 @@
       <BookSearchModal
         v-if="isDisplayingSearchModal"
         :bookCards="allBookCards"
+        @my-click="openSearchedBookAndSection"
         @my-close="closeSearchModal"
       ></BookSearchModal>
     </div>
@@ -57,9 +58,14 @@ export default {
     },
     changeSelectedBook($event) {
       this.$emit('change-book', $event);
+      this.isDisplayingSearchModal = false;
       this.isDisplayingDropdown = false;
     },
-
+    openSearchedBookAndSection($event) {
+      this.$emit('change-searched', $event);
+      this.isDisplayingSearchModal = false;
+      this.isDisplayingDropdown = false;
+    },
     showSearchModal() {
       this.isDisplayingSearchModal = true;
     },
