@@ -22,6 +22,7 @@
       :index="index"
       :selectedId="selectedId"
       @selected-update="updateSelectedId"
+      @section-update="updateSection($event, bookSection)"
     ></BookSection>
   </div>
 </template>
@@ -59,7 +60,6 @@ export default {
     cancelCreatingSection() {
       this.isCreating = false;
     },
-
     createSection($event) {
       const id = this.bookSections.length + 1;
       const title = $event;
@@ -71,6 +71,9 @@ export default {
       };
       this.bookSections.push(newSection);
       this.$emit('my-select', id);
+    },
+    updateSection($event, section) {
+      section.bookCards = $event;
     },
   },
 };

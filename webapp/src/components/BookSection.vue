@@ -14,6 +14,7 @@
         :parentSectionId="bookCard.parentSectionId"
         :key="bookCard.id"
         @card-update="updateCard($event, bookCard)"
+        @card-delete="deleteCard($event)"
       ></book-card>
     </template>
   </div>
@@ -47,6 +48,14 @@ export default {
       console.log($event);
       bookCard.text = $event;
     },
+    deleteCard($event) {
+      console.log($event);
+      const newBookCards = this.bookCards.filter(
+        (bookCard) => bookCard.id !== $event
+      );
+      this.$emit('section-update', newBookCards);
+    },
+
     createCard($event) {
       const id = this.bookCards.length + 1;
       const text = $event;

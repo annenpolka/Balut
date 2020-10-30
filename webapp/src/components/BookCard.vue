@@ -1,9 +1,11 @@
 <template>
-  <div @click="cardClicked" class="book-card">
+  <div @my-click="cardClicked" class="book-card">
     <component
       :is="cardStatus"
       :cardText="cardText"
+      :cardId="cardId"
       @card-update="updateCard"
+      @my-delete="deleteCard"
     ></component>
   </div>
 </template>
@@ -18,6 +20,7 @@ export default {
   },
   props: {
     cardText: String,
+    cardId: Number,
     parentBookId: Number,
     parentSectionId: Number,
   },
@@ -42,6 +45,9 @@ export default {
     updateCard($event) {
       this.$emit('card-update', $event);
       this.isBeingEdited = false;
+    },
+    deleteCard($event) {
+      this.$emit('card-delete', $event);
     },
   },
 };
