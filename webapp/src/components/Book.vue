@@ -22,7 +22,7 @@
       :index="index"
       :selectedId="selectedId"
       @selected-update="updateSelectedId"
-      @section-update="updateSection($event, bookSection)"
+      @section-update="updateSectionBookCards($event, bookSection)"
     ></BookSection>
   </div>
 </template>
@@ -72,7 +72,7 @@ export default {
       this.bookSections.push(newSection);
       this.$emit('my-select', id);
     },
-    updateSection($event, section) {
+    updateSectionBookCards($event, section) {
       section.bookCards = $event;
     },
   },
