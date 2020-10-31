@@ -6,6 +6,7 @@
       :selectedBookId="selectedBook.id"
       @change-book="changeSelectedBook"
       @change-searched="openSearchedBookAndSection"
+      @delete-book="deleteBook"
     ></BookListHeader>
     <div class="flex justify-center py-4">
       <book
@@ -182,6 +183,11 @@ export default {
         (book) => book.id === this.selectedId
       ).bookSections;
       this.selectedSectionId = newBookSections[newBookSections.length - 1].id;
+    },
+    deleteBook($event) {
+      console.log($event);
+      const newBooks = this.books.filter((book) => book.id !== $event);
+      this.books = newBooks;
     },
     openSearchedBookAndSection($event) {
       this.selectedId = $event.parentBookId;

@@ -12,6 +12,7 @@
         v-if="isDisplayingDropdown"
         :list="dropDownList"
         @my-click="changeSelectedBook"
+        @my-delete="deleteBook"
       ></AppDropdown>
       <font-awesome-icon
         icon="chevron-down"
@@ -66,6 +67,9 @@ export default {
       this.isDisplayingSearchModal = false;
       this.isDisplayingDropdown = false;
     },
+    deleteBook($event) {
+      this.$emit('delete-book', $event);
+    },
     showSearchModal() {
       this.isDisplayingSearchModal = true;
     },
@@ -93,5 +97,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
