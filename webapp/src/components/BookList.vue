@@ -183,7 +183,7 @@ export default {
       );
       book.bookSections = newSections;
       if (this.selectedSectionId === $event) {
-        this.selectedSectionId = newSections[0].id;
+        this.selectedSectionId = newSections[newSections.length - 1].id;
       }
     },
   },
