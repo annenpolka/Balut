@@ -3,7 +3,7 @@
     <div v-text="cardText" @click="cardClicked"></div>
     <font-awesome-icon
       icon="times"
-      class="text-lg text-gray-700"
+      class="mt-1 text-lg text-gray-700"
       @click="deleteCard"
     ></font-awesome-icon>
   </div>

@@ -1,6 +1,13 @@
 <template>
-  <div class="book-section">
-    <p @click="updateSelectedIndex()">{{ title }}</p>
+  <div class="box-content p-1 my-2 bg-gray-400 rounded shadow-sm">
+    <div class="flex justify-between">
+      <p @click="updateSelectedIndex()">{{ title }}</p>
+      <font-awesome-icon
+        icon="times"
+        class="mt-1 text-lg text-gray-800"
+        @click="deleteSection"
+      ></font-awesome-icon>
+    </div>
     <template v-if="isSelectedId">
       <CreateNewTextArea
         :placeholder="placeholder"
@@ -44,6 +51,9 @@ export default {
     },
   },
   methods: {
+    deleteSection() {
+      this.$emit('section-delete', this.sectionId);
+    },
     updateCard($event, bookCard) {
       console.log($event);
       bookCard.text = $event;
@@ -55,7 +65,6 @@ export default {
       );
       this.$emit('section-update', newBookCards);
     },
-
     createCard($event) {
       const id = this.bookCards.length + 1;
       const text = $event;

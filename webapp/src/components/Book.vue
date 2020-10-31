@@ -23,6 +23,7 @@
       :selectedId="selectedId"
       @selected-update="updateSelectedId"
       @section-update="updateSectionBookCards($event, bookSection)"
+      @section-delete="deleteSection(bookSection.id)"
     ></BookSection>
   </div>
 </template>
@@ -74,6 +75,9 @@ export default {
     },
     updateSectionBookCards($event, section) {
       section.bookCards = $event;
+    },
+    deleteSection(sectionId) {
+      this.$emit('section-delete', sectionId);
     },
   },
 };

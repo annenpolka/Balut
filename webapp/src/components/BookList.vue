@@ -14,6 +14,7 @@
         :selectedId="selectedSectionId"
         :key="selectedBook.id"
         @my-select="updateSelectedSectionId"
+        @section-delete="deleteSection($event, selectedBook)"
         class=""
       ></book>
     </div>
@@ -175,8 +176,16 @@ export default {
       this.selectedId = $event.parentBookId;
       this.selectedSectionId = $event.parentSectionId;
     },
+    deleteSection($event, book) {
+      console.log($event);
+      const newSections = book.bookSections.filter(
+        (section) => section.id !== $event
+      );
+      book.bookSections = newSections;
+      if (this.selectedSectionId === $event) {
+        this.selectedSectionId = newSections[0].id;
+      }
+    },
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
