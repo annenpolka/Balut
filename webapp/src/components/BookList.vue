@@ -14,6 +14,7 @@
         :selectedId="selectedSectionId"
         :key="selectedBook.id"
         @my-select="updateSelectedSectionId"
+        @change="initializeSelectedSectionId(bookSections)"
         @section-delete="deleteSection($event, selectedBook)"
         class=""
       ></book>
@@ -33,7 +34,7 @@ export default {
   data() {
     return {
       selectedId: 1,
-      selectedSectionId: 1,
+      selectedSectionId: 0,
       books: [
         {
           id: 1,
@@ -159,6 +160,13 @@ export default {
       ],
     };
   },
+  mounted() {
+    const selectedBookSections = this.books.find(
+      (book) => book.id === this.selectedId
+    ).bookSections;
+    this.selectedSectionId =
+      selectedBookSections[selectedBookSections.length - 1].id;
+  },
   computed: {
     selectedBook() {
       return this.books.find((book) => book.id === this.selectedId);
@@ -170,7 +178,10 @@ export default {
     },
     changeSelectedBook($event) {
       this.selectedId = $event;
-      this.selectedSectionId = 1;
+      const newBookSections = this.books.find(
+        (book) => book.id === this.selectedId
+      ).bookSections;
+      this.selectedSectionId = newBookSections[newBookSections.length - 1].id;
     },
     openSearchedBookAndSection($event) {
       this.selectedId = $event.parentBookId;
