@@ -1,6 +1,6 @@
 <template>
   <ul class="text-2xl text-black bg-gray-200 rounded">
-    <template v-for="thing in list" class="flex justify-between p-2">
+    <template v-for="thing in list" class="p-2 ">
       <li
         :key="thing.id"
         v-if="thing.selected"
@@ -23,6 +23,9 @@
         ></font-awesome-icon>
       </li>
     </template>
+    <li>
+      <slot></slot>
+    </li>
   </ul>
 </template>
 

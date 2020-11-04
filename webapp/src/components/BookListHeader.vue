@@ -13,7 +13,13 @@
         :list="dropDownList"
         @my-click="changeSelectedBook"
         @my-delete="deleteBook"
-      ></AppDropdown>
+      >
+        <CreateNewTextArea
+          class="rounded"
+          @my-submit="createBook"
+          :placeholder="placeholder"
+        ></CreateNewTextArea>
+      </AppDropdown>
       <font-awesome-icon
         icon="chevron-down"
         @click="showDropdown"
@@ -44,20 +50,28 @@
 <script>
 import AppDropdown from './AppDropdown';
 import BookSearchModal from './BookSearchModal';
+import CreateNewTextArea from './CreateNewTextArea';
 export default {
-  components: { AppDropdown, BookSearchModal },
+  components: { AppDropdown, BookSearchModal, CreateNewTextArea },
   props: ['books', 'selectedBookTitle', 'selectedBookId'],
   data() {
     return {
       isDisplayingDropdown: false,
       isDisplayingSearchModal: false,
+      placeholder: "put your new note's name...",
     };
   },
   methods: {
     showDropdown() {
       this.isDisplayingDropdown = !this.isDisplayingDropdown;
     },
+    createBook($event) {
+      this.$emit('create-book', $event);
+      this.isDisplayingSearchModal = false;
+      this.isDisplayingDropdown = false;
+    },
     changeSelectedBook($event) {
+      console.log($event);
       this.$emit('change-book', $event);
       this.isDisplayingSearchModal = false;
       this.isDisplayingDropdown = false;

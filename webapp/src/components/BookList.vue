@@ -6,6 +6,7 @@
       :selectedBookId="selectedBook.id"
       @change-book="changeSelectedBook"
       @change-searched="openSearchedBookAndSection"
+      @create-book="createBook"
       @delete-book="deleteBook"
     ></BookListHeader>
     <div class="flex justify-center py-4">
@@ -183,6 +184,18 @@ export default {
         (book) => book.id === this.selectedId
       ).bookSections;
       this.selectedSectionId = newBookSections[newBookSections.length - 1].id;
+    },
+    createBook($event) {
+      const id = this.books.length + 1;
+      const title = $event;
+      const bookSections = [];
+      const newBook = {
+        id,
+        title,
+        bookSections,
+      };
+      this.books.push(newBook);
+      this.selectedId = id;
     },
     deleteBook($event) {
       console.log($event);

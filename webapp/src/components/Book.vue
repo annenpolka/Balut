@@ -12,7 +12,6 @@
       @my-blur="cancelCreatingSection"
       :placeholder="placeholder"
     ></CreateNewTextArea>
-
     <BookSection
       v-for="(bookSection, index) in reverseBookSections"
       :bookCards="bookSection.bookCards"
