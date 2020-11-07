@@ -1,11 +1,12 @@
 <template>
-  <div @my-click="cardClicked" class="book-card">
+  <div class="book-card">
     <component
       :is="cardStatus"
       :cardText="cardText"
       :cardId="cardId"
       @card-update="updateCard"
       @my-delete="deleteCard"
+      @my-click="cardClicked"
     ></component>
   </div>
 </template>
